@@ -19,6 +19,13 @@ def index():
     ).fetchall()
     return render_template('blog/index.html', posts=posts)
 
+@bp.route('/showTest', methods=('GET', 'POST'))
+@login_required
+def showTest():
+
+    return render_template('htmlcov/index.html')
+
+
 @bp.route('/create', methods=('GET', 'POST'))
 @login_required
 def create():
